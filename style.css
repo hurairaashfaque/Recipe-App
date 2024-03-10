@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4c531;
+    color: #fff;
+}
+
+body::-webkit-scrollbar {
+    width: 13px;
+    background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #f4c531;
+    border-radius: 5px;
+    --webkit-border-redius: 16px
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #fff;
+}
+
+header nav {
+    background-color: #fff;
+    color: #333;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+}
+
+header nav h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+header nav form {
+    display: flex;
+    justify-content: center;
+}
+
+header input[type="search"] {
+    flex-grow: 1;
+    margin-right: 0.5em;
+}
+
+header input[type="search"],
+button[type="submit"] {
+    background-color: #D3D3D3;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+header input[type="search"]::placeholder {
+    color: #333;
+}
+
+form button[type="submit"] {
+    background: #f4c531;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover,
+.recipe button:hover,.close-btn:hover {
+    background-color: #ffcc33;
+}
+
+/* Mian section */
+
+.recipe-container h2 {
+    text-transform: uppercase;
+}
+
+.recipe-container {
+    text-align: center;
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+
+.recipe {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.recipe:hover{
+    transform: scale(1.02);
+}
+
+.recipe img {
+    height: 300px;
+    border-radius: 5px;
+}
+
+.recipe h3 {
+    font-size: 1.2em;
+    margin-block: 5px 0;
+}
+
+.recipe p {
+    font-size: 1.1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+.recipe span {
+    font-weight: 600;
+}
+
+.recipe button {
+    font-size: 1.05em;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f4c531;
+    color: #fff;
+    margin: 18px auto;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+/* Recipe Details */
+.recipe-details-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #333;
+    -webkit-transform: translate(-50%, -50%);
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 1.2em;
+    /* z-index: 1; */
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
+    overflow-y: scroll;
+    transition: all 0.5s ease-in-out;
+}
+
+.recipe-details-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+.recipe-details-container::-webkit-scrollbar-thumb {
+    background: #f4c531;
+    border-radius: 5px;
+    --webkit-border-redius: 16px
+}
+
+.recipe-details-content {
+    padding: 1.5em;
+}
+
+.recipe-name {
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.ingredentsList li {
+    margin: 10px 0 0 20px;
+}
+
+.Instructions {
+    line-height: 1.6em;
+    white-space: pre-line;
+}
+
+.recipe-name,
+.ingredentsList,
+.Instructions {
+    margin-bottom: 16px;
+}
+
+.close-btn {
+    border: none;
+    outline: none;
+    font-size: 10;
+    padding: 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f4c531;
+    color: #333;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease-in-out;
+    width: 30px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
+  
+
+/* Responsive Code */
+
+@media screen and (max-width:600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    header nav form {
+        width: 80%;
+        margin-top: 1rem;
+    }
+}
